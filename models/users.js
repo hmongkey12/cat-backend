@@ -1,4 +1,3 @@
-//this will contain the logic to modify users, extract users, delete users, and input users into the database
 const express = require("express");
 const mongoose = require("mongoose");
 const { userSchema } = require("../schemas/users");
