@@ -1,4 +1,3 @@
-//this will contain the logic to modify users, extract users, delete users, and input users into the database
 const express = require("express");
 const mongoose = require("mongoose");
 const { userSchema } = require("../schemas/users");
@@ -7,7 +6,7 @@ const userModel = express();
 
 userModel.get("/", async (req, res) => {
   const { hash } = req.query;
-  const mongodb_url = `mongodb+srv://garfield:${process.env.MONGODB_PASSWORD}@cluster0.rbtm5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+  const mongodb_url = process.env.MONGODB_URL;
   await mongoose.connect(mongodb_url);
   const results = await user.find({ hash: hash });
   res.send(results);
