@@ -4,7 +4,7 @@
   "description": "The backend for epic cat battles",
   "main": "index.js",
   "scripts": {
-    "start": "npm .",
+    "start": "node .",
     "dev": "nodemon ."
   },
   "repository": {
