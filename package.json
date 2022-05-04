@@ -1,0 +1,32 @@
+{
+  "name": "epic_cat_battles_backend",
+  "version": "1.0.0",
+  "description": "The backend for epic cat battles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmongkey12/cat-backend.git"
+  },
+  "keywords": [
+    "cat",
+    "battles"
+  ],
+  "author": "Team 6",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmongkey12/cat-backend/issues"
+  },
+  "homepage": "https://github.com/hmongkey12/cat-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

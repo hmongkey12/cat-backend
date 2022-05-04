@@ -1,0 +1,14 @@
+require("dotenv").config();
+const express = require("express");
+const server = express();
+const PORT = 3000;
+const { userRouter } = require("./controllers/users");
+
+server.use("/users", userRouter);
+server.listen(PORT, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("Server listening on PORT", PORT);
+  }
+});
