@@ -7,7 +7,7 @@ const { userRouter } = require("./controllers/users");
 
 server.use("/users", userRouter);
 
-server.listen(PORT | pro, (err) => {
+server.listen(PORT, (err) => {
   if (err) {
     console.log(err);
   } else {
