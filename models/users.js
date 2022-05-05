@@ -1,25 +1,9 @@
-const express = require("express");
+//This will contain the schema model for our users, and also update database
+
 const mongoose = require("mongoose");
-const { userSchema } = require("../schemas/users");
-const user = mongoose.model("user", userSchema);
-const userModel = express();
-
-userModel.get("/", async (req, res) => {
-  const { hash } = req.query;
-  const mongodb_url = process.env.MONGODB_URL;
-  await mongoose.connect(mongodb_url);
-  const results = await user.find({ hash: hash });
-  res.send(results);
+const schema = new mongoose.Schema({
+  hash: String,
 });
+const user = mongoose.model("user", schema);
 
-userModel.post("/", async (req, res) => {
-  const { hash } = req.query;
-  await mongoose.connect(process.env.MONGODB_URL);
-  const aUser = new user({ hash: hash, voted: false });
-  aUser.save();
-  res.status(201).end("success");
-});
-
-module.exports = {
-  userModel,
-};
+module.exports = { user };

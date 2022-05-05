@@ -1,10 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const server = express();
-const PORT = 3000;
-const { userRouter } = require("./controllers/users");
+const PORT = process.env.PORT || 3000;
 
-server.use("/users", userRouter);
+const { middleRouter } = require("./middlewares/middleware");
+
+server.use("/users", middleRouter);
+
 server.listen(PORT, (err) => {
   if (err) {
     console.log(err);
