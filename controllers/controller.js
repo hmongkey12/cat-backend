@@ -9,7 +9,8 @@ controllerRouter.get("/", async (req, res) => {
   const { cat } = req.query;
   await mongoose.connect(mongodb_url);
   const results = await kitty.find({ name: cat });
-  res.send(results);
+  res.json();
+  res.end(JSON.stringify(results));
 });
 
 controllerRouter.post("/", async (req, res) => {
