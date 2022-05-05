@@ -3,9 +3,9 @@ const express = require("express");
 const server = express();
 const PORT = process.env.PORT || 3000;
 
-const { userRouter } = require("./controllers/users");
+const { middleRouter } = require("./middlewares/middleware");
 
-server.use("/users", userRouter);
+server.use("/users", middleRouter);
 
 server.listen(PORT, (err) => {
   if (err) {
